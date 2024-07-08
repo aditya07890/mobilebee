@@ -4,11 +4,15 @@ import laptop from "../../assets/Images/laptop.png";
 import headphone from "../../assets/Images/headphone.png";
 import smartphone from "../../assets/Images/smartphone.png";
 import samsangS24 from "../../assets/Images/samsangS24.png";
-import header from "../../assets/Images/header.png";
+import Group from "../../assets/Images/Group .png";
 import { Card, Divider } from "@mui/material";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import { useNavigate } from "react-router-dom";
+import Header from "../Header/Header";
+import Footer from "../Footer";
 
 const Categories = () => {
+  const navigate = useNavigate();
   const categoriesCard = [
     {
       id: 1,
@@ -31,8 +35,10 @@ const Categories = () => {
 
   return (
     <>
+      <Header />
       <div className="flex ">
-        <img src={header} alt="header" className="w-full h-auto " />
+        <img src={Group} alt="header" className="w-full h-auto" />
+        <p className="relative">Shop Now</p>
       </div>
 
       {categoriesCard.map((category) => (
@@ -51,7 +57,8 @@ const Categories = () => {
                 <img
                   src={item.image}
                   alt="item"
-                  className="w-full h-auto rounded-3xl"
+                  className="w-full h-auto rounded-3xl "
+                  onClick={() => navigate("/")}
                 />
               </Card>
             ))}
@@ -70,6 +77,7 @@ const Categories = () => {
           <p className="text-4xl">Sign up Today for More</p>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

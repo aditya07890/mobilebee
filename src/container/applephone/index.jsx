@@ -3,8 +3,10 @@ import image46 from "../../assets/Images/image 46.png";
 import image47 from "../../assets/Images/image 47.png";
 import image48 from "../../assets/Images/image 48.png";
 import image49 from "../../assets/Images/image 49.png";
+import { useNavigate } from "react-router-dom";
 
 const Applephone = () => {
+  const navigate = useNavigate();
   const applet = [
     {
       id: 1,
@@ -72,6 +74,7 @@ const Applephone = () => {
               src={item.image}
               alt={item.name}
               className="w-full h-auto object-cover rounded-t-lg mb-3"
+              onClick={() => navigate("/yourcart")}
             />
             <div className="text-center">
               <p className="font-semibold">{item.name}</p>

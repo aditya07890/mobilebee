@@ -3,8 +3,10 @@ import image54 from "../../assets/Images/image 54.png";
 import image55 from "../../assets/Images/image 55.png";
 import image56 from "../../assets/Images/image 56.png";
 import image57 from "../../assets/Images/image 57.png";
+import { useNavigate } from "react-router-dom";
 
 const Realme = () => {
+  const navigate = useNavigate();
   const realmephone = [
     {
       id: 1,
@@ -63,6 +65,7 @@ const Realme = () => {
               src={item.image}
               alt={item.name}
               className="w-full h-auto object-cover mb-3"
+              onClick={() => navigate("/yourcart")}
             />
             <h3 className="text-lg font-semibold mb-2 text-center">
               {item.name}

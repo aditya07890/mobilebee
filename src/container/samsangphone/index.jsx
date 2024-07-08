@@ -3,8 +3,10 @@ import image50 from "../../assets/Images/image 50.png";
 import image51 from "../../assets/Images/image 51.png";
 import image52 from "../../assets/Images/image 52.png";
 import image53 from "../../assets/Images/image 53.png";
+import { useNavigate } from "react-router-dom";
 
 const SamSung = () => {
+  const navigate = useNavigate();
   const sumsang = [
     {
       id: 1,
@@ -67,6 +69,7 @@ const SamSung = () => {
               src={item.image}
               alt={item.name}
               className="w-full h-auto object-cover mb-3"
+              onClick={() => navigate("/yourcart")}
             />
             <h3 className="text-lg font-semibold mb-2 text-center">
               {item.name}
